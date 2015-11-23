@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Project 3</title>
+    <script type="text/javascript">
+      window.onload = function(){
+	
+		var canvas = document.getElementById("projectThree");
+			ctx = canvas.getContext("2d");	
+		
+		
+		//gradients
+		var bg = ctx.createLinearGradient(500, 500, canvas.width, canvas.height);
+			bg.addColorStop(0, "black");
+			bg.addColorStop(1,"#00004d");
+		var moonBase = ctx.createLinearGradient(0,500, 0,0);
+			moonBase.addColorStop(0,"#ffffe5");
+			moonBase.addColorStop(1,"#ffff99");
+		var dress = ctx.createLinearGradient(230,0, 0,0);
+			dress.addColorStop(0,"#fcfccf");
+			dress.addColorStop(1,"yellow");
+	
+		
+		ctx.fillStyle = bg;
+		ctx.fillRect(0,0, canvas.width, canvas.height); 
+		
+		ctx.strokeStyle = "#7e9fc2";
+		ctx.lineWidth = 5;
+		
+		//moon glow
+		ctx.beginPath();
+		ctx.arc(390, 100, 100, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "rgba(255, 255, 204, .2)";
+		ctx.fill();
+		
+		//moon base
+		
+		ctx.beginPath();
+		ctx.arc(390, 100, 80, 0, Math.PI * 2, false);
+		ctx.fillStyle = moonBase;
+		ctx.fill();
+
+		//moon holes
+		ctx.beginPath();
+		ctx.arc(360, 90, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(410, 40, 15, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(390, 70, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(325, 100, 5, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(410, 100, 20, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(400, 40, 5, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(335, 120, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(360, 150, 6, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(425, 160, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(430, 65, 15, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(340, 55, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ffff33";
+		ctx.fill();
+		
+		//star
+		var posX = 0
+			posY = 200
+			posiX = 0
+			posiY = 200
+		setInterval(function(){
+		
+		posX += 4;
+
+			if (posX > 0) {
+			posY -= 3;
+			}
+		
+		ctx.beginPath();
+		ctx.arc(posX, posY, 10, 0, Math.PI * 2, false);
+		ctx.fillStyle = "rgba(225, 255, 51,.5)";
+		ctx.fill();
+		
+		}, 40);
+		
+		
+		
+		//clouds
+		ctx.beginPath();
+		ctx.moveTo(267, 179);
+		ctx.bezierCurveTo(267, 140, 265, 140, 320, 140);
+		ctx.bezierCurveTo(290, 200, 290, 80, 360, 120);
+		ctx.bezierCurveTo(357, 100, 430, 100, 419, 180);
+		ctx.closePath();
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'blue';
+		ctx.stroke();
+		ctx.fillStyle = 'rgba(255, 255, 255,.8)';
+		ctx.fill();
+
+		ctx.beginPath();
+		ctx.moveTo(347, 269);
+		ctx.bezierCurveTo(357, 230, 355, 230, 410, 230);
+		ctx.bezierCurveTo(380, 290, 380, 170, 450, 210);
+		ctx.bezierCurveTo(447, 190, 520, 190, 509, 270);
+		ctx.closePath();
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = 'blue';
+		ctx.stroke();
+		ctx.fillStyle = 'rgba(255, 255, 255,.8)';
+		ctx.fill();
+
+		
+		//cliff
+		ctx.beginPath();
+		ctx.moveTo(0, 450);
+		ctx.lineTo(270, 480);
+		ctx.lineTo(0, 800);
+		ctx.closePath;
+		ctx.fillStyle = "#802b00";
+		ctx.fill();
+		//grass
+		ctx.beginPath();
+		ctx.moveTo(0, 450);
+		ctx.lineTo(270, 480);
+		ctx.lineTo(0, 540);
+		ctx.closePath;
+		ctx.fillStyle = "green";
+		ctx.fill();
+		
+		//specks
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-125, 70, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-110, 70, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-115, 60, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#00e600';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-120, 80, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#00e600';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-110, 90, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-125, 90, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-110, 110, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-125, 110, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#003300';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-120, 100, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#00e600';
+		ctx.fill();
+		ctx.save();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(2, 1);
+		ctx.beginPath();
+		ctx.arc(-120, 120, 5, 2 * Math.PI, false);
+		ctx.restore();
+		ctx.fillStyle = '#00e600';
+		ctx.fill();
+		
+		
+		
+		//weeds
+		ctx.lineWidth = 3;
+		ctx.strokeStyle = "yellow";
+		ctx.beginPath();
+		ctx.moveTo(62, 458);
+		ctx.bezierCurveTo(58, 380, 61, 390, 84, 410);
+		ctx.stroke();
+		ctx.moveTo(52, 458);
+		ctx.bezierCurveTo(52, 380, 61, 390, 84, 410);
+		ctx.stroke();
+		ctx.moveTo(42, 458);
+		ctx.bezierCurveTo(48, 380, 51, 390, 74, 410);
+		ctx.stroke();		
+		ctx.moveTo(32, 458);
+		ctx.bezierCurveTo(32, 380, 43, 390, 50, 340);
+		ctx.stroke();	
+		ctx.moveTo(25, 458);
+		ctx.bezierCurveTo(25, 380, 33, 390, 40, 340);
+		ctx.stroke();	
+		ctx.moveTo(15, 458);
+		ctx.bezierCurveTo(15, 380, 23, 390, 30, 340);
+		ctx.stroke();	
+		ctx.moveTo(5, 458);
+		ctx.bezierCurveTo(5, 380, 13, 390, 20, 340);
+		ctx.stroke();	
+		ctx.moveTo(-5, 458);
+		ctx.bezierCurveTo(-5, 380, 5, 390, 10, 340);
+		ctx.stroke();	
+		
+		//head
+		ctx.beginPath();
+		ctx.arc(88, 280, 40, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#cd7f65";
+		ctx.fill();
+		ctx.fill();
+		
+		//blush
+		ctx.beginPath();
+		ctx.arc(86, 280, 15, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#d74242";
+		ctx.fill();
+		
+		//eye
+		ctx.beginPath();
+		ctx.arc(98, 265, 5, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#592626";
+		ctx.fill();
+		
+		//collar
+		ctx.beginPath();
+		ctx.arc(90, 320, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		
+		ctx.beginPath();
+		ctx.arc(100, 325, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#ffffcc";
+		ctx.fill();
+		
+		//legs
+		ctx.fillStyle = "#cd7f65";
+		ctx.fillRect(75, 395, 20, 80);
+		ctx.fillStyle = "#ad5638";
+		ctx.fillRect(100, 395, 20, 80);
+		ctx.beginPath();
+		ctx.arc(135, 400, 15, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#ad5638";
+		ctx.fill();
+		
+		
+		//frills
+		ctx.beginPath();
+		ctx.arc(70, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(80, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(90, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(100, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(110, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(120, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(130, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		ctx.beginPath();
+		ctx.arc(140, 425, 10, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#fcfccf";
+		ctx.fill();
+		
+		
+		
+		
+		//dress
+		ctx.fillStyle = dress;
+		ctx.fillRect(65, 325, 45, 100);
+		ctx.beginPath();
+		ctx.moveTo(110, 425);
+		ctx.lineTo(110, 325);
+		ctx.lineTo(150, 425);
+		ctx.closePath;
+		ctx.fillStyle = dress;
+		ctx.fill();
+		
+		//arm
+		ctx.fillStyle = "#cd7f65";
+		ctx.fillRect(75, 325, 25, 80);
+		ctx.beginPath();
+		ctx.arc(98, 400, 15, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#cd7f65";
+		ctx.fill();
+		
+		//sleeve
+		ctx.beginPath();
+		ctx.arc(85, 335, 20, 0, 2 * Math.PI, false);
+		ctx.fillStyle = "#dfdf20";
+		ctx.fill();
+		
+		
+		//hair
+		ctx.beginPath();
+		ctx.moveTo(99, 237);
+		ctx.bezierCurveTo(-5, 248, 37, 299, 46, 385);
+		ctx.bezierCurveTo(82, 494, 115, 329, 87, 320);
+		ctx.fillStyle = "brown";
+		ctx.fill();
+		
+		//mouth
+		ctx.lineWidth = 2;
+		ctx.strokeStyle = "#bf4040";
+		ctx.beginPath();
+		ctx.moveTo(101, 279);
+		ctx.bezierCurveTo(116, 291, 114, 296, 120, 281);
+		ctx.stroke();
+		
+		//nose
+		ctx.beginPath();
+		ctx.moveTo(108, 245);
+		ctx.lineTo(125, 275);
+		ctx.lineTo(150, 270);
+		ctx.closePath;
+		ctx.fillStyle = "#e05252";
+		ctx.fill();
+		
+		//speech bubble
+		ctx.beginPath();
+		ctx.moveTo(205,155);
+		ctx.quadraticCurveTo(155,155,155,192.5);
+		ctx.quadraticCurveTo(155,230,180,230);
+		ctx.quadraticCurveTo(180,250,160,255);
+		ctx.quadraticCurveTo(190,250,195,230);
+		ctx.quadraticCurveTo(255,230,255,192.5);
+		ctx.quadraticCurveTo(255,155,205,155);
+		ctx.strokeStyle = "white"
+		ctx.stroke();
+		ctx.fillStyle = "white"
+		ctx.fill();
+		
+		//text
+		ctx.font = "20px Arial";
+		ctx.fillStyle = "black";
+		ctx.fillText("I wish...", 170,200);
+		
+		
+		
+	  };
+ 
+    </script>
+	<style>
+    </style>
+  </head>
+  <body>
+    <canvas id="projectThree" width="500" height="800"></canvas>
+  </body>
+</html>
